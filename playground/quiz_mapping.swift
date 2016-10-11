@@ -20,6 +20,11 @@ for name in names {
 }
 print(filtered)
 
+//답 1번
+let condArray = names.filter{$0.contains("dd")}
+print(condArray)
+
+
 
 var reversed:[String] = []
 for name in names {
@@ -27,6 +32,11 @@ for name in names {
     reversed.append(str)
 }
 print(reversed)
+
+//답 2번
+let reversedArray = names.map({ (value : String) -> String in return String(value.characters.reversed()) })
+print(reversedArray)
+
 
 
 var longest:[String] = names
