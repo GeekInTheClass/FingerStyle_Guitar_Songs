@@ -43,6 +43,12 @@ for i in 0 ..< names.count {
 }
 print(longest)
 
+//solution
+var long:[String] = []
+
+long = names.sorted{$0.characters.count > $1.characters.count}
+print(long)
+
 
 var count:Dictionary<String, Int> = [:]
 for item in names {
