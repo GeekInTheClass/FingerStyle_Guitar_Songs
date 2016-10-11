@@ -8,15 +8,7 @@ class sampleTest : XCTest {
 
 var a = 1..<4
 
-let names:[String] = ["aa", "abb", "abbc", "abbcccdddd", "ddeeee"]
-
-
-
-var counts:[Int] = []
-for name in names {
-    counts.append(name.characters.count)
-}
-print(counts)
+let names:[String] = ["aa", "bb", "bbc", "bbcccdddd", "ddeeee"]
 
 
 let cond = "dd"
@@ -64,6 +56,23 @@ for item in names {
 }
 print(count)
 
+var name = names
+for item in count {
+    for innerItem in name {
+        if (innerItem.contains(item.key)) {
+            var count:Int = 0
+            for i in innerItem.characters {
+                if (String(i) == item.key) {
+                    count = count + 1
+                }
+            }
+            if (count == item.value) {
+                name.remove(at: name.index(of: innerItem)!)
+            }
+        }
+    }
+}
 
+print(name)
 
 
